@@ -22,6 +22,9 @@ namespace Editor.DialogueSystem.Windows
         private void CreateNode()
         {
             var node = new DSNode();
+            
+            node.Initialize();
+            node.Draw();
 
             AddElement(node);
         }
