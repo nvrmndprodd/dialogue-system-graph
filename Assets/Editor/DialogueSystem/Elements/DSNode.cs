@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DialogueSystem.Enumerations;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Editor.DialogueSystem.Elements
@@ -12,11 +13,13 @@ namespace Editor.DialogueSystem.Elements
         public string Text;
         public DSDialogueType DialogueType;
 
-        public void Initialize()
+        public void Initialize(Vector2 position)
         {
             DialogueName = "DialogueName";
             Choices = new List<string>();
             Text = "Dialogue text.";
+            
+            SetPosition(new Rect(position, Vector2.zero));
         }
 
         public void Draw()
