@@ -1,6 +1,5 @@
 using Editor.DialogueSystem.Utilities;
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Editor.DialogueSystem.Windows

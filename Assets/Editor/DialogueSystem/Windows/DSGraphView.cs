@@ -1,4 +1,5 @@
-﻿using UnityEditor.Experimental.GraphView;
+﻿using Editor.DialogueSystem.Elements;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 
 namespace Editor.DialogueSystem.Windows
@@ -10,9 +11,25 @@ namespace Editor.DialogueSystem.Windows
         
         public DSGraphView()
         {
+            AddManipulators();
             AddGridBackground();
+
+            CreateNode();
             
             AddStyles();
+        }
+
+        private void CreateNode()
+        {
+            var node = new DSNode();
+
+            AddElement(node);
+        }
+
+        private void AddManipulators()
+        {
+            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
+            this.AddManipulator(new ContentDragger());
         }
 
         private void AddGridBackground()
