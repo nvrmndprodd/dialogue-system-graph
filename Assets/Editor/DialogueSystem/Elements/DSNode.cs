@@ -13,7 +13,7 @@ namespace Editor.DialogueSystem.Elements
         public string Text;
         public DSDialogueType DialogueType;
 
-        public void Initialize(Vector2 position)
+        public virtual void Initialize(Vector2 position)
         {
             DialogueName = "DialogueName";
             Choices = new List<string>();
@@ -22,13 +22,11 @@ namespace Editor.DialogueSystem.Elements
             SetPosition(new Rect(position, Vector2.zero));
         }
 
-        public void Draw()
+        public virtual void Draw()
         {
             DrawTitleContainer();
             DrawInputContainer();
             DrawExtensionContainer();
-            
-            RefreshExpandedState();
         }
 
         private void DrawTitleContainer()
